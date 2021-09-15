@@ -7,9 +7,14 @@ body{
     --font-color2:#3a3a3a;
     --font-color3: #ffffff;
     --font-color4: #444444;
-    --background-color1: #efefef;
-    --background-color2: #ffffff;
-    --background-color3: #1E9AEF;
+    --background1: #efefef;
+    --background2: #ffffff;
+    --background-color1: #1E9AEF;
+    --background-color2: #F84848;
+    --background-color3: #29B864;
+    --background-color4: #FF5521;
+    --background-color5: #444444;
+
 }
 #card__product, #background{
     display:flex;
@@ -26,7 +31,7 @@ body{
 #background{
     width: 100%;
     height: 100%;
-    background-color: var(--background-color1);
+    background-color: var(--background1);
     background-size: cover;
     justify-content: flex-start;
     box-sizing:border-box;
@@ -50,7 +55,7 @@ main{
     
 }
 #card__product__header__share__button{
-    background-color: var(--background-color1);
+    background-color: var(--background1);
     width: 50px;
     height:50px;
     border-radius: 50px;
@@ -70,7 +75,7 @@ main{
     opacity: 0.2;
 }
 #card__info{
-    background-color: var(--background-color2);
+    background-color: var(--background2);
     width:500px;
     height:530px;
     padding: 30px;
@@ -83,13 +88,16 @@ h1{
     font-size:32px;
     font-weight: 700;
     color: var(--font-color1);
+    display:flex;
 }
 #card__tag{
-    
+    margin-left: 5px;
+    height: 25px;
+    padding:0 5px 0 5px;
     font-size: 16px;
     font-weight: 400;
     color: var(--font-color3);
-    background-color: var(--background-color3);
+    background-color: var(--background-color1);
 }
 h2{
     margin: 10px 0 10px 0;
@@ -108,4 +116,52 @@ h4{
     font-size: 17px;
     font-weight: 400;
     color: var(--font-color4)
+}
+.color__buttons{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    margin: 0 8px 15px 8px;
+    border: 0;
+}
+#color__button__1{
+    background-color: var(--background-color1)
+}
+#color__button__2{
+    background-color: var(--background-color2)
+}
+#color__button__3{
+    background-color: var(--background-color3)
+}
+#color__button__4{
+    background-color: var(--background-color4)
+}
+#color__button__5{
+    background-color: var(--background-color5)
+}
+.size__buttons{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin: 0 10px 15px 10px;
+    border:0;
+    font-size: 18px;
+}
+#card__info__buy{
+    display:flex;
+    justify-content:space-between;
+    margin-top: 20px;
+    border: 0;
+}
+#card__info__buy__button{
+    font-size: 18px;
+    width: 180px;
+    height: 50px;
+    display:flex;
+    padding: 10px;
+    box-sizing: border-box;
+    justify-content:space-around;
+    color: var(--font-color3);
+    background-color:var(--background-color1);
+    border: 0;
 }
