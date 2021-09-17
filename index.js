@@ -1,0 +1,1 @@
+const btnColor1 = document.querrySelector("");
