@@ -1,73 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Product Card</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <script src="index.js"></script>
-    </head>
-    <body>
-        <div id="background">
-            <main>
+
+<head>
+    <title>Product Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div id="background">
+        <main>
+            <div id="card">
                 <div id="card__product">
                     <div id="card__product__background__original"></div>
                     <div id="card__product__background__next"></div>
-                    <img id="card__product__logo" src="./assets/nike.svg">
-                    <button id="card__product__share__button">
-                        <img id="card__product__share__button__svg" src="./assets/share2.svg">
-                    </button>
                     <p id="card__product__text">NIKE</p>
-                    <img class="card__product__shoe" id="C__D__shoe1" src="./assets/blue.182fd044.png">
-                    <img class="card__product__shoe" id="C__D__shoe2" src="./assets/red.60bfc4f3.png">
-                    <img class="card__product__shoe" id="C__D__shoe3" src="./assets/green.88f61bc5.png">
-                    <img class="card__product__shoe" id="C__D__shoe4" src="./assets/orange.0e59d7df.png">
-                    <img class="card__product__shoe" id="C__D__shoe5" src="./assets/black.f49f54e4.png">
                 </div>
-                <div id="card__info">
-                    <section id="card__info__name">
-                        <h1>Nike Zoom KD 12 <div id="card__tag">NEW</div></h1>
-                        
-                        <h3>Men's Running Shoes</h3>
-                    </section>
-                    <section id="card__info__info">
-                        <h2>PRODUCT INFO</h2>
-                        <h4>Ensure a comfortable running session by wearing this pais of a cool running shows from Nike.</h4>
-                    </section>
-                    <section id="card__info__color">
-                        <h2>COLOR</h2>
-                        <div id="card__info__color__buttons">
-                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button1"></button>
-                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button2"></button>
-                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button3"></button>
-                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button4"></button>
-                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button5"></button>
-                            
-                        </div>
-                    </section>
-                    <section id="card__info__size">
-                        <h2>SIZE</h2>
-                        <div id="card__info__size__buttons">
-                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button1">7</button>
-                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button2">8</button>
-                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button3">9</button>
-                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button4">10</button>
-                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button5">11</button>
-                            
-                        </div>
-                    </section>
-                    <section id="card__info__buy">
-                        <button id="card__info__buy__button">
-                            <img id="card__info__buy__button__cart"src="./assets/cart.svg">
-                            ADD TO CARD
+                <img class="card__product__shoe" id="C__D__shoe1" src="./assets/blue.182fd044.png" />
+                <img class="card__product__shoe" id="C__D__shoe2" src="./assets/red.60bfc4f3.png" />
+                <img class="card__product__shoe" id="C__D__shoe3" src="./assets/green.88f61bc5.png" />
+                <img class="card__product__shoe" id="C__D__shoe4" src="./assets/orange.0e59d7df.png" />
+                <img class="card__product__shoe" id="C__D__shoe5" src="./assets/black.f49f54e4.png" />
+                <img id="card__product__logo" src="./assets/nike.svg" />
+                <button id="card__product__share__button">
+                    <img id="card__product__share__button__svg" src="./assets/share2.svg" />
+                </button>
+            </div>
+            <div id="card__info">
+                <section id="card__info__name">
+                    <h1>
+                        Nike Zoom KD 12
+                        <div id="card__tag">NEW</div>
+                    </h1>
+
+                    <h3>Men's Running Shoes</h3>
+                </section>
+                <section id="card__info__info">
+                    <h2>PRODUCT INFO</h2>
+                    <h4>
+                        Ensure a comfortable running session by wearing this pais of a
+                        cool running shows from Nike.
+                    </h4>
+                </section>
+                <section id="card__info__color">
+                    <h2>COLOR</h2>
+                    <div id="card__info__color__buttons">
+                        <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button1"></button>
+                        <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button2"></button>
+                        <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button3"></button>
+                        <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button4"></button>
+                        <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button5"></button>
+                    </div>
+                </section>
+                <section id="card__info__size">
+                    <h2>SIZE</h2>
+                    <div id="card__info__size__buttons">
+                        <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button1">
+                            7
                         </button>
-                        <h1><a>$</a>149.99</h1>
-                    </section>
-                </div>
-            </main>
-        </div>
-    </body>
+                        <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button2">
+                            8
+                        </button>
+                        <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button3">
+                            9
+                        </button>
+                        <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button4">
+                            10
+                        </button>
+                        <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button5">
+                            11
+                        </button>
+                    </div>
+                </section>
+                <section id="card__info__buy">
+                    <button id="card__info__buy__button">
+                        <img id="card__info__buy__button__cart" src="./assets/cart.svg" />
+                        ADD TO CARD
+                    </button>
+                    <h1><a>$</a>149.99</h1>
+                </section>
+            </div>
+        </main>
+    </div>
+</body>
+
 </html>
