@@ -14,12 +14,12 @@
         <div id="background">
             <main>
                 <div id="card__product">
-                    <header id="card__product__header">
-                        <img id="card__product__header__logo" src="./assets/nike.svg">
-                        <button id="card__product__header__share__button">
-                            <img id="card__product__header__share__button__svg" src="./assets/share.svg">
-                        </button>
-                    </header>
+                    <div id="card__product__background__original"></div>
+                    <div id="card__product__background__next"></div>
+                    <img id="card__product__logo" src="./assets/nike.svg">
+                    <button id="card__product__share__button">
+                        <img id="card__product__share__button__svg" src="./assets/share2.svg">
+                    </button>
                     <p id="card__product__text">NIKE</p>
                     <img class="card__product__shoe" id="C__D__shoe1" src="./assets/blue.182fd044.png">
                     <img class="card__product__shoe" id="C__D__shoe2" src="./assets/red.60bfc4f3.png">
@@ -40,22 +40,22 @@
                     <section id="card__info__color">
                         <h2>COLOR</h2>
                         <div id="card__info__color__buttons">
-                            <button class="color__buttons" id="color__button__1"></button>
-                            <button class="color__buttons" id="color__button__2"></button>
-                            <button class="color__buttons" id="color__button__3"></button>
-                            <button class="color__buttons" id="color__button__4"></button>
-                            <button class="color__buttons" id="color__button__5"></button>
+                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button1"></button>
+                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button2"></button>
+                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button3"></button>
+                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button4"></button>
+                            <button class="color__buttons" onclick="setColorButtonOn(this)" id="color__button5"></button>
                             
                         </div>
                     </section>
                     <section id="card__info__size">
                         <h2>SIZE</h2>
                         <div id="card__info__size__buttons">
-                            <button class="size__buttons" id="size__button1">7</button>
-                            <button class="size__buttons" id="size__button2">8</button>
-                            <button class="size__buttons" id="size__button3">9</button>
-                            <button class="size__buttons" id="size__button4">10</button>
-                            <button class="size__buttons" id="size__button5">11</button>
+                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button1">7</button>
+                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button2">8</button>
+                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button3">9</button>
+                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button4">10</button>
+                            <button class="size__buttons" onclick="setSizeButtonOn(this)" id="size__button5">11</button>
                             
                         </div>
                     </section>

@@ -14,6 +14,7 @@ body{
     --background-color3: #29B864;
     --background-color4: #FF5521;
     --background-color5: #444444;
+    --shadow1: #cccbcb;
 
 }
 #card__product, #background{
@@ -44,34 +45,61 @@ main{
     margin:40px;
 }
 #card__product{
-    background: rgb(2,0,36);
-    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,55,174,1) 0%, rgba(34,170,249,1) 100%); 
+    width:500px;
+    height:300px;
+    position:relative;
+    overflow:hidden;
+}
+#card__product__background__original{
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,55,174,1) 0%, rgba(34,170,249,1) 100%);
+    /* background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(184,50,35,1) 0%, rgba(212,85,82,1) 100%);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(49,133,123,1) 0%, rgba(98,206,94,1) 100%);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(219,64,31,1) 0%, rgba(220,162,44,1) 100%);
+    background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(15,15,15,1) 0%, rgba(89,89,89,1) 100%); */
+    position:absolute;
     width:500px;
     height:300px;
 }
-#card__product__header{
-    width: 100%;
-    display:flex;
-    justify-content: space-between;
-    padding: 0 15px 0 15px;
-    box-sizing: border-box;
-    
+@keyframes background-changer-transition{
+    from{
+    right: 500px;
+    }to{
+    right:0px;
+    }
 }
-#card__product__header__share__button{
-    background-color: var(--background1);
+#card__product__background__next{
+    position:absolute;
+    background:linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(1,55,174,1) 0%, rgba(34,170,249,1) 100%);
+    width:500px;
+    height:300px;
+    right: 500px;
+    animation:none;
+}
+
+#card__product__share__button, #card__product__logo, #card__product__text{
+    position:absolute;
+}
+#card__product__logo{
+    top: 15px;
+    left: 15px;
+}
+#card__product__share__button{
+    box-shadow: inset 1px 1px 0px 5px var(--background1);
+    background:none;
     width: 50px;
     height:50px;
     border-radius: 50px;
     border: 0;
     padding: 0;
-    margin-top: 15px;
+    top: 15px;
+    right: 15px;
 }
-#card__product__header__share__button__svg{
-    width: 50%;
-    margin-top: 4px;
+#card__product__share__button__svg{
+    width: 100%;
+    border-radius: 50px;
 }
 #card__product__text{
-    margin: -50px 0 0 -50px;
+    margin: 0px 0 0 -50px;
     font-size: 170px;
     font-weight: 700;
     color: var(--font-color3);
@@ -126,26 +154,28 @@ h4{
     border-radius: 50px;
     margin: 0 8px 15px 8px;
     border: 0;
-}
-.color__buttons:active{
-    box-shadow: 0px 0px 5px 2px var(--background1);
-    border: 5px solid var(--background2);
     box-sizing: border-box;
 }
-#color__button__1{
-    background-color: var(--background-color1)
+#card__info__color__buttons{
+    display:flex;
+    align-items: center;
 }
-#color__button__2{
-    background-color: var(--background-color2)
+#color__button1{
+    background-color: var(--background-color1);
+    box-shadow: 0px 0px 5px 2px var(--shadow1);
+    border: 5px solid var(--background2);
 }
-#color__button__3{
-    background-color: var(--background-color3)
+#color__button2{
+    background-color: var(--background-color2);
 }
-#color__button__4{
-    background-color: var(--background-color4)
+#color__button3{
+    background-color: var(--background-color3);
 }
-#color__button__5{
-    background-color: var(--background-color5)
+#color__button4{
+    background-color: var(--background-color4);
+}
+#color__button5{
+    background-color: var(--background-color5);
 }
 .size__buttons{
     width: 40px;
@@ -154,9 +184,10 @@ h4{
     margin: 0 10px 15px 10px;
     border:0;
     font-size: 18px;
+    background-color:unset;
 }
-.size__buttons:active{
-    background-color: var(--background-color1)
+#size__button3{
+    background-color: var(--background-color1);
 }
 #card__info__buy{
     display:flex;
@@ -168,11 +199,20 @@ h4{
     font-size: 18px;
     width: 180px;
     height: 50px;
-    display:flex;
     padding: 10px;
+    display:flex;
     box-sizing: border-box;
     justify-content:space-around;
+    align-items: center;
     color: var(--font-color3);
     background-color:var(--background-color1);
     border: 0;
+}
+#card__info__buy__button__cart{
+    max-height:30px;
+    width:auto;
+}
+#card__info__buy__button:hover, #card__product__share__button:hover{
+    transform: scale(1.1);
+    cursor:pointer;
 }
