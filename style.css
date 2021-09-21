@@ -28,25 +28,39 @@ body {
 #background {
   box-sizing: border-box;
 }
+#card__info__buy__button:hover,
+#card__product__share__button:hover {
+  transform: scale(1.1);
+}
+#card__info__buy__button:hover,
+#card__product__share__button:hover,
+.color__buttons,
+.size__buttons {
+  cursor: pointer;
+}
 #background {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: var(--background1);
   background-size: cover;
-  justify-content: flex-start;
-  box-sizing: border-box;
+  justify-content: center;
+  padding: 10px;
 }
 main {
   box-shadow: 0px 0px 34px 1px rgba(17, 17, 17, 0.5);
   margin: 40px;
 }
 #card__product, #card{
+  position: relative;
+}
+#card__product, #card, #card__product__background__original {
   width: 430px;
   height: 300px;
   position: relative;
 }
 #card__product {
   overflow: hidden;
+  width: 100%;
 }
 .card__product__shoe{
   display:none;
@@ -69,14 +83,12 @@ main {
     background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(219,64,31,1) 0%, rgba(220,162,44,1) 100%);
     background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(15,15,15,1) 0%, rgba(89,89,89,1) 100%); */
   position: absolute;
-  width: 430px;
-  height: 300px;
 }
 @keyframes background-changer-transition {
   0% {
     right: 430px;
   }
-  50% {
+  80% {
     right: 0px;
   }
   100% {
@@ -204,10 +216,11 @@ h4 {
 .size__buttons {
   width: 40px;
   height: 40px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 0 10px 10px 10px;
   border: 0;
   font-size: 18px;
+  font-weight: 600;
   background-color: unset;
 }
 #size__button3 {
@@ -236,11 +249,6 @@ h4 {
   max-height: 30px;
   width: auto;
 }
-#card__info__buy__button:hover,
-#card__product__share__button:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
 @media screen and (min-width:1024px) {
     main{
         display:flex;
@@ -251,7 +259,8 @@ h4 {
         align-self: center;
     }
     #card__product, 
-    #card, #card__product__background__original, 
+    #card, 
+    #card__product__background__original, 
     #card__product__background__next {
         height: 475px;
     }
@@ -272,4 +281,61 @@ h4 {
         color: var(--font-color3);
         opacity: 0.2;
       }
+}
+@media screen and (max-width:450px) {
+  main,
+  #card,
+  #card__product,
+  #card__info,
+  #card__product__background__original {
+    width: 100%;
+    margin: 0;
+  }
+  main{
+    overflow: hidden;
+  }
+  .card__product__shoe{
+    width: 350px;
+  }
+  #card__product__text{
+    font-size: 140px;
+  }
+  #card{
+    height: 190px;
+  }
+  #card__info{
+    padding: 20px;
+    height: 100%;
+  }
+  #card__product__logo{
+    top: 0px;
+  }
+  #card__product__share__button{
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    right: 10px;
+  }
+  h1{
+    font-size:21px;
+  }
+  h2,
+  h3{
+    font-size:15px;
+  }
+  h4{
+    font-size:13px;
+  }
+  #card__info__color__buttons{
+    justify-content: space-around;
+  }
+  .color__buttons{
+    width: 25px;
+    height: 25px;
+  }
+  .size__buttons{
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
 }

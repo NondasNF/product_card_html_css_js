@@ -1,13 +1,13 @@
 const CurrentSizeButton = 2;
 var CurrentSizeButtonStyle = "var(--background-color1)";
 var CurrentColor = "blue";
-var backgroundChangerAnimationParameter =
-    "1s linear background-changer-transition";
+var backgroundChangerAnimationParameter = "1s linear background-changer-transition";
+var allowdToClick = true;
 
-function setProductShoe(number){
+function setProductShoe(number) {
     let Allshoes = document.querySelectorAll(".card__product__shoe");
-    let nextShow = document.querySelector(`#C__D__shoe${number+1}`);
-    for (let i=0; i < Allshoes.length; i++) {
+    let nextShow = document.querySelector(`#C__D__shoe${number + 1}`);
+    for (let i = 0; i < Allshoes.length; i++) {
         Allshoes[i].style.display = "none";
     }
     nextShow.style.display = "block";
@@ -32,49 +32,33 @@ function getBackgroundByButtonColor(buttonElement) {
 }
 function setProductTagBuy(backgroundButtonColor) {
     document.querySelector("#card__tag").style.background = backgroundButtonColor;
-    document.querySelector("#card__info__buy__button").style.backgroundColor =
-        backgroundButtonColor;
+    document.querySelector("#card__info__buy__button").style.backgroundColor = backgroundButtonColor;
 }
 
-function setColorButtonOn(colorButtonClicked) {
-    let colorButtons = document.querySelectorAll(".color__buttons");
-    colorButtons.forEach(setColorButtonOff);
-    setProduct(colorButtonClicked);
-    colorButtonClicked.style.border = "5px solid var(--background2)";
-    colorButtonClicked.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
-}
 function setProductBackground(colorButtonClicked) {
-    let backgroundProductCardNextStyle =
-        getBackgroundByButtonColor(colorButtonClicked);
-    let backgroundProductCardNext = document.querySelector(
-        "#card__product__background__next"
-    );
+    let backgroundProductCardNextStyle = getBackgroundByButtonColor(colorButtonClicked);
+    let backgroundProductCardNext = document.querySelector("#card__product__background__next");
     backgroundProductCardNext.style.background = backgroundProductCardNextStyle;
     backgroundProductCardNext.style.animationName = "none";
     backgroundProductCardNext.focus(); //reset reflow
-    backgroundProductCardNext.style.animation =
-        backgroundChangerAnimationParameter;
+    backgroundProductCardNext.style.animation = backgroundChangerAnimationParameter;
     setTimeout(function () {
-        let backgroundProductCard = document.querySelector(
-            "#card__product__background__original"
-        );
+        let backgroundProductCard = document.querySelector("#card__product__background__original");
         backgroundProductCard.style.background = backgroundProductCardNextStyle;
-    }, 600);
+    }, 810);
 }
 function setProduct(colorButtonClicked) {
     let sizeButtons = document.querySelectorAll(".size__buttons");
-    let backgroundButtonColor =
-        window.getComputedStyle(colorButtonClicked)["backgroundColor"];
-    CurrentSizeButtonStyle =
-        window.getComputedStyle(colorButtonClicked)["backgroundColor"];
-        for (let i = 0; i < sizeButtons.length; i++) {
-            if (
-                window.getComputedStyle(sizeButtons[i])["backgroundColor"] !=
-                "rgba(0, 0, 0, 0)"
-            ) {
-                sizeButtons[i].style.backgroundColor = backgroundButtonColor;
-            }
+    let backgroundButtonColor = window.getComputedStyle(colorButtonClicked)["backgroundColor"];
+    CurrentSizeButtonStyle = window.getComputedStyle(colorButtonClicked)["backgroundColor"];
+    for (let i = 0; i < sizeButtons.length; i++) {
+        if (
+            window.getComputedStyle(sizeButtons[i])["backgroundColor"] !=
+            "rgba(0, 0, 0, 0)"
+        ) {
+            sizeButtons[i].style.backgroundColor = backgroundButtonColor;
         }
+    }
     setProductBackground(colorButtonClicked);
     setProductTagBuy(backgroundButtonColor);
 }
@@ -83,11 +67,28 @@ function setColorButtonOff(button) {
     button.style.boxShadow = "none";
     button.style.border = "none";
 }
+
+function setColorButtonOn(colorButtonClicked) {
+    debugger;
+    if (allowdToClick === true) {
+        allowdToClick = false;
+        setProduct(colorButtonClicked);
+        let colorButtons = document.querySelectorAll(".color__buttons");
+        colorButtons.forEach(setColorButtonOff);
+        colorButtonClicked.style.border = "5px solid var(--background2)";
+        colorButtonClicked.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
+        
+    }
+    if(colorButtonClicked.style.border === "none"){
+        allowdToClick = true;
+    }
+}
+
+function setSizeButtonOff(button) {
+    button.style.backgroundColor = "unset";
+}
 function setSizeButtonOn(sizeButtonClicked) {
     let sizeButtons = document.querySelectorAll(".size__buttons");
     sizeButtons.forEach(setSizeButtonOff);
     sizeButtonClicked.style.backgroundColor = CurrentSizeButtonStyle;
-}
-function setSizeButtonOff(button) {
-    button.style.backgroundColor = "unset";
 }
