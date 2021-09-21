@@ -28,9 +28,6 @@ body {
 #background {
   box-sizing: border-box;
 }
-main {
-  box-shadow: 0px 0px 34px 1px rgba(17, 17, 17, 0.5);
-}
 #background {
   width: 100%;
   height: 100%;
@@ -40,11 +37,11 @@ main {
   box-sizing: border-box;
 }
 main {
-  display: block;
+  box-shadow: 0px 0px 34px 1px rgba(17, 17, 17, 0.5);
   margin: 40px;
 }
 #card__product, #card{
-  width: 500px;
+  width: 430px;
   height: 300px;
   position: relative;
 }
@@ -72,12 +69,12 @@ main {
     background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(219,64,31,1) 0%, rgba(220,162,44,1) 100%);
     background: linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(15,15,15,1) 0%, rgba(89,89,89,1) 100%); */
   position: absolute;
-  width: 500px;
+  width: 430px;
   height: 300px;
 }
 @keyframes background-changer-transition {
   0% {
-    right: 500px;
+    right: 430px;
   }
   50% {
     right: 0px;
@@ -94,9 +91,9 @@ main {
     rgba(1, 55, 174, 1) 0%,
     rgba(34, 170, 249, 1) 100%
   );
-  width: 500px;
+  width: 430px;
   height: 300px;
-  right: 500px;
+  right: 430px;
   animation: none;
 }
 
@@ -125,7 +122,7 @@ main {
   border-radius: 50px;
 }
 #card__product__text {
-  margin: 0px 0 0 -50px;
+  margin: 0;
   font-size: 170px;
   font-weight: 700;
   color: var(--font-color3);
@@ -134,7 +131,7 @@ main {
 #card__info {
   background-color: var(--background2);
   position: relative;
-  width: 500px;
+  width: 430px;
   height: 530px;
   padding: 30px;
 }
@@ -158,7 +155,7 @@ h1 {
   background-color: var(--background-color1);
 }
 h2 {
-  margin: 10px 0 10px 0;
+  margin: 10px 0 0px 0;
   font-size: 19px;
   font-weight: 600;
   color: var(--font-color2);
@@ -208,7 +205,7 @@ h4 {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  margin: 0 10px 15px 10px;
+  margin: 0 10px 10px 10px;
   border: 0;
   font-size: 18px;
   background-color: unset;
@@ -243,4 +240,36 @@ h4 {
 #card__product__share__button:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+@media screen and (min-width:1024px) {
+    main{
+        display:flex;
+        box-shadow: none;
+    }
+    #card{
+        box-shadow:-10px 1px 41px 5px rgba(0,0,0,0.25);
+        align-self: center;
+    }
+    #card__product, 
+    #card, #card__product__background__original, 
+    #card__product__background__next {
+        height: 475px;
+    }
+    #card__info{
+        box-shadow:10px 1px 41px 5px rgba(0,0,0,0.25);
+    }
+
+    .card__product__shoe{
+        top: 65px;
+        right: 5px;
+        width:600px;
+        transform: rotate(340deg);
+    }
+    #card__product__text {
+        margin: 30px 0 0 0;
+        font-size: 170px;
+        font-weight: 700;
+        color: var(--font-color3);
+        opacity: 0.2;
+      }
 }

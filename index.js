@@ -5,7 +5,6 @@ var backgroundChangerAnimationParameter =
     "1s linear background-changer-transition";
 
 function setProductShoe(number){
-    debugger;
     let Allshoes = document.querySelectorAll(".card__product__shoe");
     let nextShow = document.querySelector(`#C__D__shoe${number+1}`);
     for (let i=0; i < Allshoes.length; i++) {
