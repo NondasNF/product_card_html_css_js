@@ -8,11 +8,12 @@ function setProductShoe(number){
     debugger;
     let Allshoes = document.querySelectorAll(".card__product__shoe");
     let nextShow = document.querySelector(`#C__D__shoe${number+1}`);
-    for (let i=0; i <= Allshoes.length; i++) {
+    for (let i=0; i < Allshoes.length; i++) {
         Allshoes[i].style.display = "none";
     }
     nextShow.style.display = "block";
 }
+
 function getBackgroundByButtonColor(buttonElement) {
     let colorButton = document.querySelectorAll(".color__buttons");
     let ProductBackground = [
@@ -67,8 +68,7 @@ function setProduct(colorButtonClicked) {
         window.getComputedStyle(colorButtonClicked)["backgroundColor"];
     CurrentSizeButtonStyle =
         window.getComputedStyle(colorButtonClicked)["backgroundColor"];
-    try {
-        for (let i = 0; i <= sizeButtons.length; i++) {
+        for (let i = 0; i < sizeButtons.length; i++) {
             if (
                 window.getComputedStyle(sizeButtons[i])["backgroundColor"] !=
                 "rgba(0, 0, 0, 0)"
@@ -76,7 +76,6 @@ function setProduct(colorButtonClicked) {
                 sizeButtons[i].style.backgroundColor = backgroundButtonColor;
             }
         }
-    } catch (e) { }
     setProductBackground(colorButtonClicked);
     setProductTagBuy(backgroundButtonColor);
 }
