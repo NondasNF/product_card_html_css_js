@@ -68,6 +68,7 @@ function setColorButtonOff(button) {
     button.style.border = "none";
 }
 
+
 function setColorButtonOn(colorButtonClicked) {
     debugger;
     if (allowdToClick === true) {
@@ -75,12 +76,13 @@ function setColorButtonOn(colorButtonClicked) {
         setProduct(colorButtonClicked);
         let colorButtons = document.querySelectorAll(".color__buttons");
         colorButtons.forEach(setColorButtonOff);
+        if(colorButtonClicked.style.border == "none"){setTimeout(function(){ 
+                allowdToClick = true;
+        }, 800);
+        }
         colorButtonClicked.style.border = "5px solid var(--background2)";
         colorButtonClicked.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
         
-    }
-    if(colorButtonClicked.style.border === "none"){
-        allowdToClick = true;
     }
 }
 
