@@ -70,20 +70,44 @@ function setColorButtonOff(button) {
 
 
 function setColorButtonOn(colorButtonClicked) {
-    debugger;
+    //  debugger;
+    let colorButtons = document.querySelectorAll(".color__buttons");
+
     if (allowdToClick === true) {
         allowdToClick = false;
-        setProduct(colorButtonClicked);
-        let colorButtons = document.querySelectorAll(".color__buttons");
-        colorButtons.forEach(setColorButtonOff);
-        if(colorButtonClicked.style.border == "none"){setTimeout(function(){ 
-                allowdToClick = true;
-        }, 800);
-        }
-        colorButtonClicked.style.border = "5px solid var(--background2)";
-        colorButtonClicked.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
-        
+        colorButtons.forEach(function (colorButtonSelected) {
+            console.log("for");
+            if (colorButtonSelected === colorButtonClicked) {
+                debugger;
+                console.log("1");
+                if (colorButtonClicked.style.border === "none") {
+                    console.log("2");
+                    colorButtonClicked.style.border = "5px solid var(--background2)";
+                    colorButtonClicked.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
+                    setProduct(colorButtonClicked);
+                }
+            } else {
+                setColorButtonOff(colorButtonSelected);
+                console.log("1.1")
+            }
+        });
     }
+    console.log("0")
+    setTimeout(function () {
+        allowdToClick = true;
+    }, 1000);
+    // if (allowdToClick === true) {
+    //     setProduct(colorButtonClicked);
+    //     colorButtonClicked.style.border = "5px solid var(--background2)";
+    //     colorButtonClicked.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
+    // }
+    // if(colorButtonClicked.style.border == "none"){setTimeout(function(){ 
+    //         allowdToClick = true;
+    // }, 800);
+    // }
+    // colorButtons.forEach(setColorButtonOff);
+
+
 }
 
 function setSizeButtonOff(button) {

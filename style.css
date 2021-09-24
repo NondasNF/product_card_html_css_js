@@ -191,6 +191,8 @@ h4 {
   margin: 0 8px 15px 8px;
   border: 0;
   box-sizing: border-box;
+  border:none;
+  box-shadow: none;
 }
 #card__info__color__buttons {
   display: flex;
