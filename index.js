@@ -2,7 +2,6 @@ const CurrentSizeButton = 2;
 var CurrentSizeButtonStyle = "var(--background-color1)";
 var CurrentColor = "blue";
 var backgroundChangerAnimationParameter = "1s linear background-changer-transition";
-var allowdToClick = true;
 
 function setProductShoe(number) {
     let Allshoes = document.querySelectorAll(".card__product__shoe");
@@ -64,25 +63,39 @@ function setProduct(colorButtonClicked) {
 }
 
 function setColorButtonOff(button) {
-    button.style.boxShadow = "none";
-    button.style.border = "none";
+    button.style.boxShadow = "";
+    button.style.border = "";
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    let colorButtonInitial = document.querySelector("#color__button1");
+    colorButtonInitial.style.border = "5px solid var(--background2)";
+    colorButtonInitial.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
+ }, false);
 
+var allowdToClick = true;
 function setColorButtonOn(colorButtonClicked) {
-    debugger;
-    if (allowdToClick === true) {
+
+    if (colorButtonClicked.style.border === "") {
+        setColorButtonOff(colorButtonClicked);
+        setTimeout(function () {
+            allowdToClick = true;
+        }, 800);
+    }else{
         allowdToClick = false;
+    }
+
+    if (allowdToClick == true) {
+        allowdToClick = false;
+        
         setProduct(colorButtonClicked);
+
         let colorButtons = document.querySelectorAll(".color__buttons");
         colorButtons.forEach(setColorButtonOff);
-        if(colorButtonClicked.style.border == "none"){setTimeout(function(){ 
-                allowdToClick = true;
-        }, 800);
-        }
         colorButtonClicked.style.border = "5px solid var(--background2)";
         colorButtonClicked.style.boxShadow = "0px 0px 5px 2px var(--shadow1)";
-        
+
+
     }
 }
 

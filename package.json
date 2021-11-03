@@ -1,0 +1,11 @@
+{
+  "name": "product_card_html_css_js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/NondasNF/product_card_html_css_js.git",
+  "author": "Epaminondas Noronha Feitosa <nondasnoronha@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^8.7.0"
+  }
+}
